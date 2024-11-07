@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="recipe.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1 class="logo">Find MY Cooks</h1>
+            <nav>
+                <ul class="nav-list">
+                    <li>Home</li>
+                    <li>Recipes</li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    
+<section class="head">
+    <div class="head-selection">
+        <h2>
+            Find our best recipes
+        </h2>
+        <p>Search what you want to relish.</p>
+        <form class="search-box">
+            <input type="text" placeholder="Search Recipes" id="search" oninput="searchrecipes()">
+            <button type="submit">Search</button>
+        </form>
+
+    </div>
+
+</section>
+<section class="recipes">
+    <h1>Featured Recipes</h1></section>
+    <section class="recip">
+        <div class="recipe-card" data-recipe="Paneer Butter Masala">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/paneer-butter-masala-768x1152.webp" alt="">
+            <h2>Paneer Butter Masala</h2>
+            <a href="./h1.html">Recipe</a>
+        </div>
+        <div class="recipe-card" data-recipe="Idli">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/06/idli-768x1152.webp" alt="">
+            <h2>Idli</h2>
+            <a href="./h2.html">Recipe</a>
+        </div>
+        <div class="recipe-card" data-recipe="Chana Chaat">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2024/10/chaat-tikki-768x1152.webp" alt="">
+            <h2>Chana Chaat</h2>
+            <a href="./h3.html">Recipe</a>
+        </div>
+        <div class="recipe-card" data-recipe="Veg Fried Rice">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2022/01/fried-rice-768x1152.webp" alt="">
+            <h2>Veg Fried Rice</h2>
+            <a href="./h4.html">Recipe</a>
+        </div>
+        <div class="recipe-card" data-recipe="Masala Dosa">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/06/masala-dosa-768x1152.webp" alt="">
+            <h2>Masala Dosa</h2>
+            <a href="./h5.html">Recipe</a>
+        </div>
+        <div class="recipe-card" data-recipe="Masala Dosa">
+            <img src="https://www.indianhealthyrecipes.com/wp-content/uploads/2021/07/samosa-768x1152.webp" alt="">
+            <h2>Samosa</h2>
+            <a href="./h6.html">Recipe</a>
+        </div>
+</section>
+<script>
+   function searchrecipes() {
+            const input = document.getElementById('search').value.toLowerCase();
+            const recipeCards = document.querySelectorAll('.recipe-card');
+
+            recipeCards.forEach(function(card) {
+                const recipeName = card.getAttribute('data-recipe').toLowerCase();
+                
+                // Show or hide the recipe card based on the input
+                if (recipeName.includes(input)) {
+                    card.style.display = 'inline-block';  // Show card
+                } else {
+                    card.style.display = 'none';  // Hide card
+                }
+            });
+        }
+</script>
+
+
+</body>
+</html>
